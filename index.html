@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Sequência do Usuário</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Digite um número inteiro positivo</h1>
+    <form method="post" action="/resultado">
+        <input type="number" name="numero" required>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <div th:if="${tipo}">
+        <h2 th:text="${tipo}"></h2>
+        <p th:each="num : ${sequencia}" th:text="${num} + ' '"></p>
+    </div>
+</body>
+</html>
